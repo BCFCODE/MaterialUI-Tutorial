@@ -1,15 +1,22 @@
 import React, { useState } from "react";
-import { AppBar, Typography, Button, Toolbar } from "@mui/material";
+import { Tabs, Tab, AppBar, Toolbar } from "@mui/material";
 
 const Test = () => {
+  const [value, setValue] = useState();
   return (
     <div>
       <AppBar>
         <Toolbar>
-          <Typography>LOGO</Typography>
-          <Button variant="contained" sx={{ marginLeft: "auto" }} color="success">
-            LOGIN
-          </Button>
+          <Tabs
+            indicatorColor="secondary"
+            textColor="inherit"
+            value={value}
+            onChange={(e, val) => setValue(val)}
+          >
+            <Tab label="First" />
+            <Tab label="Second" />
+            <Tab label="Third" />
+          </Tabs>
         </Toolbar>
       </AppBar>
     </div>
